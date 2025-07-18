@@ -10,12 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout 🛎
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: Make Install 🚀
+      
+      - name: Make Install
         run: make install
+
+      - name: chmod version-commit
+        run: chmod +x ./version-commit
         
-      - name: Make Build 🚀
+      - name: Make Build
         run: make build
         
       - name: Make GitHub Pages 🚀
