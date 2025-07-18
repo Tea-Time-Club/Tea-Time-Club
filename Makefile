@@ -11,6 +11,9 @@ serve-all:
 	rm -rf book theme/*
 	mdbook serve --open --hostname 0.0.0.0
 
+install:
+	cargo install mdbook
+
 ###############################################################################
 #
 # Change the 'push' target to reference the specific target(s) you want the
