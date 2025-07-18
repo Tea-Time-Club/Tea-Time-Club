@@ -50,7 +50,7 @@ rsync: build
 gh-pages: build
 	set -ex ; \
 	WORK="$$( mktemp -d )" ; \
-	PREVDIR="$$( cd )" ; \
+	PREVDIR="$(PWD)" ; \
 	VER="$$( git describe --always --tags --dirty )" ; \
 	git branch -D gh-pages || true ; \
 	git branch gh-pages origin/gh-pages ; \
