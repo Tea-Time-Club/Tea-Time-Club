@@ -3,12 +3,8 @@ name: GH Pages Deploy
 on:
   push:
     branches: [main]
-
-
   pull_request:
     branches: [main]
-
-
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -17,15 +13,5 @@ jobs:
       - name: Checkout 🛎
         uses: actions/checkout@v2
 
-      - name: Install dependencies 🔧
-        run: make install
-
-      - name: Build 🏗️
-        run: make build
-
-      - name: Deploy to GitHub Pages 🚀
-        if: ${{ github.event_name != 'pull_request' }}
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: book
+      - name: Make gh-pages 🚀
+        run: make gh-pages
