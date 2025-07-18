@@ -3,16 +3,16 @@
 # * template https://github.com/kg4zow/mdbook-template/
 
 [book]
-authors                 = ["John Simpson"]
+authors                 = ["Tea Time Club"]
 language                = "en"
 multilingual            = false
 src                     = "src"
-title                   = "Template"
+title                   = "Tea Time Club"
 
 [output.html]
 additional-css          = [ "section-lines.css" , "version-commit.css" ]
 curly-quotes            = false
-git-repository-url      = "https://github.com/kg4zow/mdbook-template"
+git-repository-url      = "https://github.com/Tea-Time-Club/Tea-Time-Club"
 no-section-label        = true
 default-theme           = "rust"
 preferred-dark-theme    = "ayu"
