@@ -52,6 +52,9 @@ gh-pages: build
 	WORK="$$( mktemp -d )" ; \
 	PREVDIR="$(PWD)" ; \
 	VER="$$( git describe --always --tags --dirty )" ; \
+	git config user.name "github-actions" && \
+	git config user.email "github-actions@github.com" && \
+	git remote add origin https://x-access-token:$(GH_TOKEN)@github.com/Tea-Time-Club/Tea-Time-Club.git && \
 	git branch -D gh-pages || true ; \
 	git branch gh-pages origin/gh-pages ; \
 	git worktree add --force "$$WORK" gh-pages ; \
