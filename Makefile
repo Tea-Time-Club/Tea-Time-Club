@@ -50,6 +50,7 @@ rsync: build
 gh-pages: build
 	set -ex ; \
 	WORK="$$( mktemp -d )" ; \
+	PREVDIR="$$( cd )" ; \
 	VER="$$( git describe --always --tags --dirty )" ; \
 	git branch -D gh-pages || true ; \
 	git branch gh-pages origin/gh-pages ; \
@@ -57,9 +58,9 @@ gh-pages: build
 	rm -rf "$$WORK"/* ; \
 	rsync -av book/ "$$WORK"/ ; \
 	if [ -f CNAME ] ; then cp CNAME "$$WORK"/ ; fi ; \
-	pushd "$$WORK" ; \
+	cd "$$WORK" ; \
 	git add -A ; \
 	git commit -m "Updated gh-pages $$VER" ; \
-	popd ; \
+	cd "$$PREVDIR" ; \
 	git worktree remove "$$WORK" ; \
 	git push origin gh-pages
