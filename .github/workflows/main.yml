@@ -12,6 +12,7 @@ jobs:
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v2
-
-      - name: Make gh-pages 🚀
+      - name: Make Build 🚀
+        run: make build
+      - name: Make GitHub Pages 🚀
         run: make gh-pages
